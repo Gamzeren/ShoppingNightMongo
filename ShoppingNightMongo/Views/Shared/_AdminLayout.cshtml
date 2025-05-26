@@ -1,0 +1,50 @@
+﻿@{
+	Layout = null;
+}
+
+<style>
+	.logo-header{
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.sidebar{
+		margin-top:20px;
+	}
+	.sidebar a{
+		text-decoration:none;
+		color:inherit;
+	}
+
+	.sidebar a:hover{
+		text-decoration:none;
+	}
+	.navbar{
+		text-decoration: none;
+		color: inherit;
+	}
+</style>
+
+<!DOCTYPE html>
+<html>
+@await Component.InvokeAsync("_HeadComponent")
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			@await Component.InvokeAsync("_HeaderComponent")
+			@await Component.InvokeAsync("_NavbarComponent")
+		</div>
+		@await Component.InvokeAsync("_SidebarComponent")
+		<div class="main-panel">
+			<div class="content">
+				<div class="container-fluid">
+					@RenderBody()
+				</div>
+			</div>
+			@await Component.InvokeAsync("_FooterComponent")
+		</div>
+	</div>
+	</div>
+</body>
+@await Component.InvokeAsync("_ScriptComponent")
+</html>
